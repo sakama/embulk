@@ -148,7 +148,7 @@ categories:
     ruby-input                 Ruby record input plugin    (like "mysql")
     ruby-output                Ruby record output plugin   (like "mysql")
     ruby-filter                Ruby record filter plugin   (like "add-hostname")
-    #ruby-file-input           Ruby file input plugin      (like "ftp")          # not implemented yet [#21]
+    ruby-file-input            Ruby file input plugin      (like "ftp")
     #ruby-file-output          Ruby file output plugin     (like "ftp")          # not implemented yet [#22]
     ruby-parser                Ruby file parser plugin     (like "csv")
     ruby-formatter             Ruby file formatter plugin  (like "csv")
@@ -236,7 +236,7 @@ examples:
         when "ruby-input"       then [:ruby, :input]
         when "ruby-output"      then [:ruby, :output]
         when "ruby-filter"      then [:ruby, :filter]
-        when "ruby-file-input"  then raise "ruby-file-input is not implemented yet. See #21 on github." #[:ruby, :file_input]
+        when "ruby-file-input"  then [:ruby, :file_input]
         when "ruby-file-output" then raise "ruby-file-output is not implemented yet. See #22 on github." #[:ruby, :file_output]
         when "ruby-parser"      then [:ruby, :parser]
         when "ruby-formatter"   then [:ruby, :formatter]
