@@ -51,10 +51,9 @@ module Embulk
     #  register_plugin(:decoder, type, klass, DecoderPlugin)
     #end
 
-    ## TODO EncoderPlugin JRuby API is not written by anyone yet
-    #def register_encoder(type, klass)
-    #  register_plugin(:encoder, type, klass, EncoderPlugin)
-    #end
+    def register_encoder(type, klass)
+      register_plugin(:encoder, type, klass, EncoderPlugin)
+    end
 
     def register_guess(type, klass)
       register_plugin(:guess, type, klass, GuessPlugin,

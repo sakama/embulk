@@ -153,7 +153,7 @@ categories:
     ruby-parser                Ruby file parser plugin     (like "csv")
     ruby-formatter             Ruby file formatter plugin  (like "csv")
     #ruby-decoder              Ruby file decoder plugin    (like "gzip")         # not implemented yet [#31]
-    #ruby-encoder              Ruby file encoder plugin    (like "gzip")         # not implemented yet [#32]
+    ruby-encoder               Ruby file encoder plugin    (like "gzip")
     java-input                 Java record input plugin    (like "mysql")
     java-output                Java record output plugin   (like "mysql")
     java-filter                Java record filter plugin   (like "add-hostname")
@@ -241,7 +241,7 @@ examples:
         when "ruby-parser"      then [:ruby, :parser]
         when "ruby-formatter"   then [:ruby, :formatter]
         when "ruby-decoder"     then raise "ruby-decoder is not implemented yet. See #31 on github." #[:ruby, :decoder]
-        when "ruby-encoder"     then raise "ruby-decoder is not implemented yet. See #32 on github." #[:ruby, :encoder]
+        when "ruby-encoder"     then [:ruby, :encoder]
         else
           usage_op op, "Unknown category '#{lang_cate}'"
         end
