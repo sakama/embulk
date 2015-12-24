@@ -51,7 +51,17 @@ module Embulk
     end
 
     # TODO add migration for jsonColumn method if timestampColumn method exists but jsonColumn method doesn't exist
+    if migrator.match("**/*.java", /void +timestampColumn/) && !migrator.match("**/*.java", /void +jsonColumn/)
+      replace =  <<EOF
 
+@Override
+public void jsonColumn(Column column) {
+    // Not Implemented
+}
+
+EOF
+      migrator.replace("**/*.java", /(\r\n|\n)+.+?void +timestampColumn/, replace)
+    end
     #
     # add rules...
     ##

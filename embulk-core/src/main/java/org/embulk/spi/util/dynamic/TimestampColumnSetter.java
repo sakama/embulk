@@ -5,6 +5,7 @@ import org.embulk.spi.Column;
 import org.embulk.spi.time.Timestamp;
 import org.embulk.spi.time.TimestampParser;
 import org.embulk.spi.time.TimestampParseException;
+import org.msgpack.value.Value;
 
 public class TimestampColumnSetter
         extends AbstractDynamicColumnSetter
@@ -60,5 +61,11 @@ public class TimestampColumnSetter
     public void set(Timestamp v)
     {
         pageBuilder.setTimestamp(column, v);
+    }
+
+    @Override
+    public void set(Value v)
+    {
+        pageBuilder.setJson(column, v);
     }
 }

@@ -5,6 +5,7 @@ import com.google.common.math.DoubleMath;
 import org.embulk.spi.Column;
 import org.embulk.spi.PageBuilder;
 import org.embulk.spi.time.Timestamp;
+import org.msgpack.value.Value;
 
 public class LongColumnSetter
         extends AbstractDynamicColumnSetter
@@ -65,5 +66,11 @@ public class LongColumnSetter
     public void set(Timestamp v)
     {
         pageBuilder.setDouble(column, v.getEpochSecond());
+    }
+
+    @Override
+    public void set(Value v)
+    {
+        pageBuilder.setJson(column, v);
     }
 }

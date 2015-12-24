@@ -32,6 +32,7 @@ Gem::Specification.new do |gem|
     gem.add_dependency "jruby-jars", '= 9.0.0.0'
   end
 
+  gem.add_development_dependency 'embulk', ['~> 0.7.10']
   gem.add_development_dependency "rake", [">= 0.10.0"]
   gem.add_development_dependency "test-unit", ["~> 3.0.9"]
   gem.add_development_dependency "yard", ["~> 0.8.7"]
